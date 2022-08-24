@@ -1,0 +1,110 @@
+
+(rules PCB DextraBoard
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (app.freerouting.autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 67)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.8)
+      (against_preferred_direction_trace_costs 4.0)
+    )
+    (layer_rule In1.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.5)
+    )
+    (layer_rule In2.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.2)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.8)
+      (against_preferred_direction_trace_costs 2.3)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 150.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 37.6 (type smd_smd))
+  )
+  (padstack "Via[0-3]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-3]_800:400_um" "Via[0-3]_800:400_um" default
+  )
+  (via 
+    "Via[0-3]_800:400_um-kicad_default" "Via[0-3]_800:400_um" default
+  )
+  (via_rule
+    default "Via[0-3]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-3]_800:400_um-kicad_default"
+  )
+  (class default
+    GND "unconnected-(U2-Pad14)" "unconnected-(U2-Pad17)" "unconnected-(U2-Pad18)" "unconnected-(U2-Pad19)" "unconnected-(U2-Pad20)" "unconnected-(U2-Pad21)" "unconnected-(U2-Pad22)"
+    "unconnected-(U2-Pad23)" "unconnected-(U2-Pad24)" "unconnected-(U2-Pad25)" "unconnected-(U2-Pad26)" "unconnected-(U2-Pad27)" "unconnected-(U2-Pad28)" "unconnected-(U2-Pad29)" "unconnected-(U2-Pad30)"
+    "unconnected-(U2-Pad31)" "unconnected-(U2-Pad32)" "unconnected-(U2-Pad34)" "unconnected-(U2-Pad35)" "unconnected-(U2-Pad37)" "unconnected-(J6-PadA8)" "unconnected-(J6-PadB8)" "unconnected-(J9-PadA8)"
+    "unconnected-(J9-PadB8)" +5V "/N76E003s (PWM + ADC + IO)/PWM0_0" "/N76E003s (PWM + ADC + IO)/PWM0_1" "/N76E003s (PWM + ADC + IO)/PWM0_2" "/N76E003s (PWM + ADC + IO)/PWM0_3" +3V3 "/N76E003s (PWM + ADC + IO)/ANA0_5"
+    "/N76E003s (PWM + ADC + IO)/ANA0_4" "/N76E003s (PWM + ADC + IO)/ANA0_3" "/N76E003s (PWM + ADC + IO)/ANA0_2" "/N76E003s (PWM + ADC + IO)/ANA0_1" "/N76E003s (PWM + ADC + IO)/ANA0_0" +BATT "Net-(TP3-Pad1)" "Net-(TP4-Pad1)"
+    "Net-(TP5-Pad1)" "/N76E003s (PWM + ADC + IO)/PWM0_5" "/N76E003s (PWM + ADC + IO)/TXD0" "/N76E003s (PWM + ADC + IO)/PWM0_4" "/N76E003s (PWM + ADC + IO)/RXD0" "/N76E003s (PWM + ADC + IO)/ANA0_6" "/N76E003s (PWM + ADC + IO)/PWM1_5" "/N76E003s (PWM + ADC + IO)/PWM1_2"
+    "/N76E003s (PWM + ADC + IO)/PWM1_1" "/N76E003s (PWM + ADC + IO)/PWM1_0" "/N76E003s (PWM + ADC + IO)/ANA1_5" "/N76E003s (PWM + ADC + IO)/ANA1_1" "/N76E003s (PWM + ADC + IO)/ANA1_3" "/N76E003s (PWM + ADC + IO)/ANA1_4" "/N76E003s (PWM + ADC + IO)/ANA1_2" "/N76E003s (PWM + ADC + IO)/ANA1_0"
+    "/N76E003s (PWM + ADC + IO)/TXD1" "/N76E003s (PWM + ADC + IO)/PWM1_3" "/N76E003s (PWM + ADC + IO)/PWM1_4" "/N76E003s (PWM + ADC + IO)/RXD1" "/N76E003s (PWM + ADC + IO)/ANA1_6" "/N76E003s (PWM + ADC + IO)/ANA2_3" "/N76E003s (PWM + ADC + IO)/ANA2_2" "/N76E003s (PWM + ADC + IO)/ANA2_1"
+    "/N76E003s (PWM + ADC + IO)/ANA2_0" "/N76E003s (PWM + ADC + IO)/PWM2_0" "/N76E003s (PWM + ADC + IO)/PWM2_1" "/N76E003s (PWM + ADC + IO)/PWM2_2" "/N76E003s (PWM + ADC + IO)/PWM2_3" "/N76E003s (PWM + ADC + IO)/ANA2_6" "/N76E003s (PWM + ADC + IO)/ANA2_5" "/N76E003s (PWM + ADC + IO)/ANA2_4"
+    "/N76E003s (PWM + ADC + IO)/PWM2_4" "/N76E003s (PWM + ADC + IO)/PWM2_5" "/N76E003s (PWM + ADC + IO)/TXD2" "/N76E003s (PWM + ADC + IO)/RXD2" "/N76E003s (PWM + ADC + IO)/ANA3_0" "/N76E003s (PWM + ADC + IO)/ANA3_1" "/N76E003s (PWM + ADC + IO)/ANA3_2" "/N76E003s (PWM + ADC + IO)/ANA3_3"
+    "/N76E003s (PWM + ADC + IO)/ANA3_4" "/N76E003s (PWM + ADC + IO)/ANA3_5" "/N76E003s (PWM + ADC + IO)/ANA3_6" "/N76E003s (PWM + ADC + IO)/PWM3_1" "/N76E003s (PWM + ADC + IO)/PWM3_0" "Net-(TP6-Pad1)" "/N76E003s (PWM + ADC + IO)/PWM3_5" "/N76E003s (PWM + ADC + IO)/PWM3_2"
+    "/N76E003s (PWM + ADC + IO)/TXD3" "/N76E003s (PWM + ADC + IO)/PWM3_3" "/N76E003s (PWM + ADC + IO)/PWM3_4" "/N76E003s (PWM + ADC + IO)/RXD3" VBUS "Net-(J6-PadA5)" "/USB_DP" "/USB_DN"
+    "Net-(J6-PadB5)" "Net-(J9-PadA5)" "Net-(J9-PadB5)" /PWM0 "Net-(U2-Pad1)" /PWM1 /ANA4 /ANA3
+    /ANA2 /ANA0 /ANA1 "/I2C_SDA" "/I2C_SCL" "Net-(R7-Pad2)" /VSENSE /VIN
+    "unconnected-(U7-Pad1)" "unconnected-(U2-Pad2)" "unconnected-(U2-Pad5)" "unconnected-(U2-Pad6)" "unconnected-(U2-Pad7)" "unconnected-(U2-Pad8)" "unconnected-(U2-Pad9)" "unconnected-(U2-Pad33)"
+    "unconnected-(U2-Pad40)" "unconnected-(U2-Pad41)" "unconnected-(U2-Pad44)" "unconnected-(U2-Pad45)" "unconnected-(U2-Pad47)" "unconnected-(U2-Pad48)" "unconnected-(U8-Pad4)" "unconnected-(U8-Pad5)"
+    "unconnected-(U8-Pad6)" "unconnected-(U8-Pad7)" "unconnected-(U8-Pad8)" "unconnected-(U8-Pad9)" "unconnected-(U8-Pad10)"
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    (clearance_class default)
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu B.Cu)
+    )
+  )
+)
