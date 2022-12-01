@@ -1,3 +1,5 @@
 (sym_lib_table
   (lib (name "N76E003AQ20")(type "Legacy")(uri "${KIPRJMOD}/Lib/N76E003AQ20/N76E003AQ20.lib")(options "")(descr ""))
+  (lib (name "Espressif")(type "KiCad")(uri "${KIPRJMOD}/Lib/kicad-libraries-main-espressif/libraries/Espressif.kicad_sym")(options "")(descr ""))
+  (lib (name "dextra")(type "KiCad")(uri "${KIPRJMOD}/Lib/dextra.kicad_sym")(options "")(descr ""))
 )

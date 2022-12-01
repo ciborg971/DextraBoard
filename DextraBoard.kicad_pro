@@ -430,7 +430,15 @@
     ],
     [
       "d71e87ed-80a4-4405-b430-b84b6b85f08f",
-      "N76E003s (PWM + ADC + IO)"
+      "Extension"
+    ],
+    [
+      "0cb2309e-0281-494b-9155-40b9bec79f03",
+      "bms"
+    ],
+    [
+      "a4e018b4-7ad5-429e-bc03-b98f88a3c9e0",
+      "USB"
     ]
   ],
   "text_variables": {}
